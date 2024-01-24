@@ -1,4 +1,6 @@
+## Java Lecture
 ## Java Seminare
+## Algoritm and structure
 
 ### Sem 1
 1. Given an integer number n, return the difference between the product of its digits and the sum of its digits.
@@ -12,3 +14,6 @@
    Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
 
 ### homework
+
+README(homework).md
+
