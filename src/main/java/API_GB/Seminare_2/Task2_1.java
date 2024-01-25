@@ -1,4 +1,4 @@
-package Sem2;
+package API_GB.Seminare_2;
 
 import java.util.Scanner;
 

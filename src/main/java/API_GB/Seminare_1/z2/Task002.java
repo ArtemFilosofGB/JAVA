@@ -1,7 +1,7 @@
 //Дана последовательность N целых чисел.
 // Найти количество положительных чисел, после которых следует отрицательное число.
 
-package org.example.z2;
+package API_GB.Seminare_1.z2;
 
 import java.util.Scanner;
 

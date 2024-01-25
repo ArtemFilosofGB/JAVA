@@ -1,5 +1,5 @@
 
-package org.example.z1;
+package API_GB.Seminare_1.z1;
 
 import java.util.Scanner;
 

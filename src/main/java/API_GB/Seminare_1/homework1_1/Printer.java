@@ -1,4 +1,4 @@
-package Homework1_1;
+package API_GB.Seminare_1.homework1_1;
 class Answer {
   public int countNTriangle(int n){
     // Введите свое решение ниже

@@ -1,4 +1,4 @@
-package Lecture_1;
+package API_GB.Lesson_1;
 /**
  * Лекция 1
  * program

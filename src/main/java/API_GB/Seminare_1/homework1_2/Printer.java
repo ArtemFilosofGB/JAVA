@@ -1,4 +1,4 @@
-package Homework1_2;
+package API_GB.Seminare_1.homework1_2;
 
 /**
  * Напишите функцию printPrimeNums, которая выведет на экран все простые числа в

@@ -1,0 +1,4 @@
+янв. 25, 2024 2:58:43 PM API_GB.Lesson_2.Ex005_Logger main
+WARNING: Тестовое логирование 1
+янв. 25, 2024 2:58:43 PM API_GB.Lesson_2.Ex005_Logger main
+INFO: Тестовое логирование 2

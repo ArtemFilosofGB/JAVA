@@ -1,4 +1,4 @@
-package Homework1_3;
+package API_GB.Seminare_1.homework1_3;
 
 class Calculator {
     public float calculate(char op, int a, int b) {

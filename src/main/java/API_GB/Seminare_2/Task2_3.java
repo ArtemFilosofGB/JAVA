@@ -1,4 +1,4 @@
-package Sem2;
+package API_GB.Seminare_2;
 
 public class Task2_3 {
     public static void main(String[] args) {

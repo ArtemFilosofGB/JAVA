@@ -1,4 +1,4 @@
-package org.example.z4;
+package API_GB.Seminare_1.z4;
 
 import java.util.Scanner;
 
