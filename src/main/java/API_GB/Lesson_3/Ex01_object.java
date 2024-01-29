@@ -13,6 +13,8 @@ public class Ex01_object {
             return (Object)((Double) a + (Double) b);
         } else if(a instanceof Integer && b instanceof Integer) {
             return (Object)((Integer) a + (Integer) b);
+        } else if (a instanceof String && b instanceof String) {
+            return (Object) ((String) a + (String) b);
         } else return 0;
     }
 
