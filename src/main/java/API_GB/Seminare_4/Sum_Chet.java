@@ -1,4 +1,4 @@
-package API_GB.Seminare_4.z1;
+package API_GB.Seminare_4;
 
 import java.util.Arrays;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package API_GB.Seminare_4.z1.SimplifyPath;
+package API_GB.Seminare_4.SimplifyPath;
 
 import java.util.Deque;
 import java.util.LinkedList;
