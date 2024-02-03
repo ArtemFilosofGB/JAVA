@@ -2,7 +2,7 @@ package Algoritm_and_Data_Structure.homework_1;
 
 import java.util.Arrays;
 
-public class Mail {
+public class Main {
     public static void main(String[] args) {
 
         int[] arr = {100, 5, -7, 85, -500, 1, 19};
