@@ -1,4 +1,4 @@
-package API_GB.Lessons_6.part1.part2;
+package API_GB.Lessons_6.part2;
 
 import java.util.*;
 
@@ -31,15 +31,19 @@ public class Ex001_Program {
         w3.salary = 300;
         w3.id = 3000;
 
-        // System.out.println(w1);
-        // System.out.println(w2);
-        // System.out.println(w3);
+         System.out.println(w1);
+         System.out.println(w2);
+         System.out.println(w3);
+         System.out.println(w4);
         //#endregion
 
         System.out.println(w1==w4);
         System.out.println(w1.equals(w4));
         var workers = new HashSet<Worker>(Arrays.asList(w1, w2, w3));
         System.out.println(workers.contains(w4));
+
+        Player pl1=new Player();
+        pl1.x=123;
         
     }
 }

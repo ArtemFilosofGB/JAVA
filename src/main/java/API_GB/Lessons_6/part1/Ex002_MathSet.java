@@ -4,9 +4,9 @@ public class Ex002_MathSet {
     public static void main(String[] args) {
         var a = new HashSet<>(Arrays.asList(1,2,3,4,5,6,7));
         var b = new HashSet<>(Arrays.asList(2,3,5,7,11,13,17));
-        var u = new HashSet<Integer>(a); u.addAll(b);
-        var r = new HashSet<Integer>(a); r.retainAll(b);
-        var s = new HashSet<Integer>(a); s.removeAll(b);
+        var u = new HashSet<Integer>(a); u.addAll(b);//обьединение множеств
+        var r = new HashSet<Integer>(a); r.retainAll(b);//пересичение множества а b
+        var s = new HashSet<Integer>(a); s.removeAll(b);//из множества а вычитаем множество b
         System.out.println("a = " + a); // [1, 2, 3, 4, 5, 6]
         System.out.println("b = " + b); // [17, 2, 3, 5, 7, 11]
         System.out.println("u = " + u); // [1, 17, 2, 3, 4, 5, 6, 11]

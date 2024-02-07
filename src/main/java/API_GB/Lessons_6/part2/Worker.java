@@ -1,4 +1,4 @@
-package API_GB.Lessons_6.part1.part2;
+package API_GB.Lessons_6.part2;
 
 public class Worker {
     int id;
@@ -8,7 +8,8 @@ public class Worker {
 
     @Override
     public String toString() {
-        return String.format("%d %s %s %d", id, firstName, lastName, salary);
+        String res = String.format(id+" nane:"+firstName+" "+lastName);
+        return res;
     }
 
     @Override
