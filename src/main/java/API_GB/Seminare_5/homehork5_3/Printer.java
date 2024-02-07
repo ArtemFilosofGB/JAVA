@@ -5,39 +5,39 @@ import java.util.Arrays;
 
 //------------------------
 class HeapSort {
-    public static void buildTree(int[] tree, int sortLength) {
+    public static void buildTree(int[] tree, int i,int n) {
         // Введите свое решение ниже
-        int n = sortLength;
-        for (int i = n / 2 - 1; i >= 0; i--) {
-            heapSort(tree, n);
+        int l = i * 2 ;
+        int r = i * 2 + 1;
+        int largest = i;
 
-        }
-        for (int i = n - 1; i >= 0; i--) {
+        if (l < n && tree[l] > tree[largest])
+            largest = l;
+        if (r < n && tree[r] > tree[largest])
+            largest = r;
+
+        if (i != largest) {
             int temp = tree[i];
-            tree[i] = tree[0];
-            tree[0] = temp;
-            heapSort(tree,n);
+            tree[i] = tree[largest];
+            tree[largest] = temp;
+
+            buildTree(tree, largest, n);//рекурсия
         }
 
     }
 
     public static void heapSort(int[] sortArray, int sortLength) {
 // Введите свое решение ниже
-        int l = 0 ;
-        int r = sortLength;
-        int largest = (r+l)/2;
+        int n = sortLength;
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            buildTree(sortArray, i, n);
 
-        if (l < sortLength && sortArray[l] > sortArray[largest])
-            largest = l;
-        if (r < sortLength && sortArray[r] > sortArray[largest])
-            largest = r;
-
-        if (sortLength != largest) {
-            int temp = sortArray[sortLength];
-            sortArray[sortLength] = sortArray[largest];
-            sortArray[largest] = temp;
-
-            heapSort(sortArray, largest);//рекурсия
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            int temp = sortArray[i];
+            sortArray[i] = sortArray[0];
+            sortArray[0] = temp;
+            buildTree(sortArray,0,i);
         }
     }
 }
@@ -48,7 +48,7 @@ public class Printer {
         int[] initArray;
 
         if (args.length == 0) {
-            initArray = new int[]{17, 32, 1, 4, 25, 17, 0, 3, 10, 7, 64, 1};
+            initArray = new int[]{17, -32, 1, 4, 17, 17, 0, -3, 10, -7, 64, 1};
         } else {
             initArray = Arrays.stream(args[0].split(" ")).mapToInt(Integer::parseInt).toArray();
         }
