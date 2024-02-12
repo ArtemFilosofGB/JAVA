@@ -5,7 +5,7 @@ import java.util.List;
 
 public class VendingMashineHotDrink implements VendingMashine{
 
-    List<Product> ListHotDrinks = new ArrayList<>();
+    List<HotDrink> ListHotDrinks = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -28,21 +28,23 @@ public class VendingMashineHotDrink implements VendingMashine{
         return null;
     }
 
+    /**
+     * @apiNote Поиск продукта по трём параметрам
+     * @param name
+     * @param cost
+     * @param volume
+     * @return экземпляр класса HotDrink
+     */
     @Override
-    public Product getProduct(String name, int cost, double volume) {
+    public HotDrink getProduct(String name, int cost, double volume) {
+        for (HotDrink hotDrink : ListHotDrinks) {
+            if(hotDrink.getName().equals(name)
+                    && hotDrink.getCost()==cost
+                    && hotDrink.getVolume()==volume)
+                return hotDrink;
+        }
         return null;
     }
-
-//    @Override
-//    public Product getProduct(String name, int cost, double volume) {
-//        for (Product hotDrink : ListHotDrinks) {
-//            if(hotDrink.getName().equals(name)
-//                    && hotDrink.getCost()==cost
-//                    && (BotlOfWater)hotDrink.getVolume()==volume)
-//                return hotDrink;
-//        }
-//        return null;
-//    }
 
 
     /**
@@ -52,7 +54,7 @@ public class VendingMashineHotDrink implements VendingMashine{
      */
     @Override
     public Product getProduct(int cost) {
-        for (Product hotDrink : ListHotDrinks) {
+        for (HotDrink hotDrink : ListHotDrinks) {
             if(hotDrink.getCost()==cost)
                 return hotDrink;
         }
