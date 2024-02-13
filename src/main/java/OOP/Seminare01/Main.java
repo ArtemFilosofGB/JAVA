@@ -25,7 +25,7 @@ public class Main {
         System.out.println("mashineHotDrink = \n" + mashineHotDrink);
         System.out.println("mashineHotDrink.getProduct(\"Горячий кофе\") = " + mashineHotDrink.getProduct("Горячий кофе"));//Поиск по имени
         System.out.println("mashineHotDrink.getProduct(370) = " + mashineHotDrink.getProduct(570)); //Поиск по стоимости
-        System.out.println("mashineHotDrink.getProduct(\"Горячий кофе\",470,0.6) = " + mashineHotDrink.getProduct("Горячий кофе", 470, 0.6));//Поиск по 3м параметрам перегруженный метод getProduct реализован на HotDrink
+        System.out.println("mashineHotDrink.getProduct(\"Горячий кофе\",470,0.6) = " + mashineHotDrink.getProduct("Горячий кофе", 470, 0.6));//Поиск по 3м параметрам перегруженный метод getProduct реализован на Product
 
         printGetProduct(mashine, "Чай");//Найти(Чай) = HotDrink{name = Чай  cost = 250  volume = 0.5 temperature=70}
         printGetProduct(mashineHotDrink, "Чай");//Найти(Чай) = null Чай отсутствует в mashineHotDrink

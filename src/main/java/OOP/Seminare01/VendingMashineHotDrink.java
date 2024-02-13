@@ -5,7 +5,7 @@ import java.util.List;
 
 public class VendingMashineHotDrink implements VendingMashine{
 
-    List<HotDrink> ListHotDrinks = new ArrayList<>();
+    List<Product> ListHotDrinks = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -37,11 +37,11 @@ public class VendingMashineHotDrink implements VendingMashine{
      */
     @Override
     public HotDrink getProduct(String name, int cost, double volume) {
-        for (HotDrink hotDrink : ListHotDrinks) {
+        for (Product hotDrink : ListHotDrinks) {
             if(hotDrink.getName().equals(name)
                     && hotDrink.getCost()==cost
-                    && hotDrink.getVolume()==volume)
-                return hotDrink;
+                    && ((HotDrink)hotDrink).getVolume()==volume)
+                return (HotDrink) hotDrink;
         }
         return null;
     }
@@ -54,7 +54,7 @@ public class VendingMashineHotDrink implements VendingMashine{
      */
     @Override
     public Product getProduct(int cost) {
-        for (HotDrink hotDrink : ListHotDrinks) {
+        for (Product hotDrink : ListHotDrinks) {
             if(hotDrink.getCost()==cost)
                 return hotDrink;
         }
