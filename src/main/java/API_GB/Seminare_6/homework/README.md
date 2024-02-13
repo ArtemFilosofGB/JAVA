@@ -11,9 +11,10 @@
 
 Вывод должен быть отсортирован по убыванию числа телефонов.
 
-
 * метод печати `void printBook() `
-* метод добавления контакта
+* метод печати отсортированной книги`void getAllContacts() `
+* метод добавления контакта `add(String name, Integer number)`
 * метод добавления номера к существующему контакту `void add(String name, Integer number)`
 * метод удаления контакта `void deleteContact(String name)`
 * метод удаления номера из контакта `void deleteNumber(String name, int number)`
+* поиск `List<Integer> find(String name)`

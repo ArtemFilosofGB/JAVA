@@ -52,15 +52,6 @@ public class PhoneBook {
     }
 
 
-    public void sort3() {
-
-        for (List<Integer> value : db.values()) {
-            System.out.println("value.size() = " + value.size() + "\n");
-
-        }
-
-    }
-
     public void deleteContact(String name) {
         db.remove(name);
     }
@@ -70,6 +61,19 @@ public class PhoneBook {
         list.remove(list.indexOf(number));
         for (Integer i : list) {
             add(name,i);
+        }
+    }
+
+    /**
+     * @apiNote печать отсортированной записной книги
+     * Сортировка по количеству номеров
+     */
+    public void getAllContacts() {
+        List<Map.Entry<String, List<Integer>>> sortList = new ArrayList<>(db.entrySet());
+        sortList.sort((entry1, entry2) -> Integer.compare(entry2.getValue().size(), entry1.getValue().size()));
+
+        for (Map.Entry<String, List<Integer>> entry : sortList) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
 }
