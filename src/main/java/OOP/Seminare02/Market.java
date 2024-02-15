@@ -64,7 +64,7 @@ public class Market implements QueueBehaviour, MarketBehaviour {
         for (Actor actor : queue) {
             if (!actor.isTakeOrder()) {
                 releasedActors.add(actor);
-                System.out.println(actor.getName() + "вышел из очереди");
+                System.out.println(actor.getName() + " вышел из очереди");
             }
         }
         releaseFromMarket(releasedActors);
