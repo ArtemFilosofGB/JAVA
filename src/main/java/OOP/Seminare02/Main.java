@@ -9,5 +9,7 @@ public class Main {
         Human human2 = new Human("Petr");
         marker.acceptToMarket(human1);
         marker.update();
+        marker.acceptToMarket(human2);
+        marker.update();
     }
 }
