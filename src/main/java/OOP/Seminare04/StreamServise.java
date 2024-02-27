@@ -16,12 +16,5 @@ public class StreamServise {
     public static void sortStreamOfStudentGroup(List<Stream> streamList) {
         Collections.sort(streamList,new StreamCoparator());
     }
-//    public List<StudentGroup> getSortStream(){
-//        List<StudentGroup> studentGroupList = new ArrayList<>(stream.getStudentGroupList());
-//        for (StudentGroup studentGroup : studentGroupList) {
-//            studentGroup.
-//
-//        }
-//        return studentGroupList;
-//    }
+
 }

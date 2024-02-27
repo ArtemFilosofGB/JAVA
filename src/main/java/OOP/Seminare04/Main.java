@@ -11,59 +11,45 @@ public class Main {
         Student student2 = new Student(2, "Alex", "Serg", "Pushkin");
         Student student3 = new Student(3, "Lev", "Nik", "Tolst");
 //Первая группа студентов 1,2,3,4
-        List<Student> studentList = new ArrayList<>();
+        List<Student> studentList = new ArrayList<>(Arrays.asList(student1, student2, student3, student4));
         StudentGroup studentGroup = new StudentGroup(studentList);
 
-        studentGroup.addStudent(student1);
-        studentGroup.addStudent(student2);
-        studentGroup.addStudent(student3);
-        studentGroup.addStudent(student4);
+        StudentGroupService sGrSv = new StudentGroupService(studentGroup);
 
-        StudentGroupService service = new StudentGroupService(studentGroup);
-        for (Student student : studentGroup) {
+        System.out.println("Student Sort by");
+        for (Student student : sGrSv.getSortedStudentGroup()) {
             System.out.println(student);
         }
-        System.out.println();
-        for (Student student : service.getSortedStudentGroup()) {
+        System.out.println("Student Sort by FIO");
+        for (Student student : sGrSv.getSortedStudentGroupByFIO()) {
             System.out.println(student);
         }
-        System.out.println();
-        for (Student student : service.getSortedStudentGroupByFIO()) {
-            System.out.println(student);
+
+
+        System.out.println("==========Teacher View=============");
+
+        Teacher teacher1 = new Teacher("Kirill", "Iv", "Moiseev", 1);
+        Teacher teacher2 = new Teacher("Sergio", "Iv", "Kamenecii", 2);
+        Teacher teacher3 = new Teacher("Ali", "A", "Ababua", 3);
+
+        List<Teacher> teacherList = new ArrayList<>(Arrays.asList(teacher1, teacher2, teacher3));
+        TeacherView teacherView = new TeacherView();
+        teacherView.sendOnConsole(teacherList);
+
+        System.out.println("==========Teacher Servise=============");
+        TeacherServise ts = new TeacherServise(teacherList);
+
+        System.out.println("ts.getTeacher():");
+        for (Teacher t : ts.getTeacher()) {
+            System.out.println(t);
         }
-        System.out.println("==========Group=============");
-//Вторая группа студент 1,2
-        List<Student> studentList2 = new ArrayList<>();
-        StudentGroup studentGroup2 = new StudentGroup(studentList2);
-        studentGroup2.addStudent(student1);
-        studentGroup2.addStudent(student2);
 
-       List<StudentGroup> studentGroupList = new ArrayList<>();
-       studentGroupList.add(studentGroup);
-        studentGroupList.add(studentGroup2);
+        System.out.println("ts.getSortedTeacherByFIO():");
+        for (Teacher teacher : ts.getSortedTeacherByFIO()) {
+            System.out.println(teacher);
 
-
-        System.out.println("========steam===============");
-
-        StreamInerator streamInerator = new StreamInerator(studentGroupList);
-        while (streamInerator.hasNext()) {
-            System.out.println("steam = \n" + streamInerator.next().toString());
         }
-        Stream stream1 = new Stream();
-        stream1.studentGroupList.add(studentGroup);
-        Stream stream2 = new Stream();
-        stream2.studentGroupList.add(studentGroup2);
-        stream2.studentGroupList.add(studentGroup2);
-        //Поток 2 больше потока 1
-        System.out.println(stream1.compareTo(stream2));//studentGroupList.size() o.studentGroupList.size() 1 2  ===-1
 
-        System.out.println("========Sort steam===============");
-        List<Stream>streamList = new ArrayList<>(Arrays.asList(stream1,stream2));
-        StreamServise.sortStreamOfStudentGroup(streamList);
-        System.out.println("Sorted Streams:\n" + streamList);
-
-        StudentView studentView = new StudentView();
-        studentView.sendOnConsole(studentList);
 
     }
 }

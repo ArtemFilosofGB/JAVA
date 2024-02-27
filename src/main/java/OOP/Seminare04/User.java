@@ -3,6 +3,8 @@ package OOP.Seminare04;
 public class User {
     private String firstName;
     private String secondName;
+    private String LastName;
+
 
     @Override
     public String toString() {
@@ -12,8 +14,6 @@ public class User {
                 ", LastName='" + LastName + '\'' +
                 '}';
     }
-
-    private String LastName;
 
     public User(String firstName, String secondName, String lastName) {
         this.firstName = firstName;
