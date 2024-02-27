@@ -27,5 +27,10 @@ MVC модель
 * Teacher(User)
     * teacherId
 
+* LessonGroup
+    * Teacher
+    * List<Student>
+
+
 
 
