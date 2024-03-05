@@ -1,18 +1,22 @@
 package OOP.Homework07Calculator;
 
+import OOP.Homework07Calculator.Controller.UserController;
+
 public class Main {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
-        calculator.setOperation(new Summ());
-        System.out.println("5 + 3 = " + calculator.calculate(5, 3));
 
-        calculator.setOperation(new Subtraction());
-        System.out.println("5 - 3 = " + calculator.calculate(5, 3));
 
-        calculator.setOperation(new Multiplication());
-        System.out.println("5 * 3 = " + calculator.calculate(5, 3));
 
-        calculator.setOperation(new Division());
-        System.out.println("5 / 3 = " + calculator.calculate(5, 3));
+
+        UserController userController = new UserController();
+        userController.help();
+        while (userController.getRun()){
+
+            String expretion = userController.getUserInput();//Ввод строки
+            userController.parseInput(expretion); // разделяем троку
+            userController.showParsed();//Вывод результата разделения
+            userController.getResult();
+            userController.printResult();
+        }
     }
 }

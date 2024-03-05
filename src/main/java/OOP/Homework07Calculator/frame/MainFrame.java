@@ -1,4 +1,4 @@
-package OOP.Homework07Calculator.Frame;
+package OOP.Homework07Calculator.frame;
 
 import javax.swing.*;
 

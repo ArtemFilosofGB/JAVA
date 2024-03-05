@@ -1,4 +1,4 @@
-package OOP.Homework07Calculator;
+package OOP.Homework07Calculator.model;
 
 public class Multiplication implements Operation {
     @Override
