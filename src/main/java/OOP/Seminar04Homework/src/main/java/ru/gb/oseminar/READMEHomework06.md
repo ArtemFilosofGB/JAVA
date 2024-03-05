@@ -29,7 +29,7 @@ D - Инверсия зависимостей (Dependency Inversion Principle)
 
 Модули высокого уровня не должны зависеть от модулей низкого уровня. Вместо этого зависимости должны быть инвертированы, так что модули высокого уровня зависят от абстракций, а модули низкого уровня реализуют эти абстракции.
 
-![schema.jpg](schema.jpg)
+
 https://miro.com/welcomeonboard/Nk5KTFVCcm1MNVJmZnM3WjNvNVpPbnJ3Y3VhMGNDODdsc2NHVGY3enU2MjZlTDNDdTFhWFIxZjg0MHVFamRQSnwzNDU4NzY0NTI4MTQ3ODg1MTg4fDI=?share_link_id=707240731400
 
 Пояснение выполнения:
