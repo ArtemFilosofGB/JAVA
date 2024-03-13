@@ -18,10 +18,10 @@
 1. В качестве использованного патерна был взят Декоратор
 
 
-`Inreface Operation --> Class Division`
-`Inreface Operation --> Class Multiplication`
-`Inreface Operation --> Class Subtraction`
-`Inreface Operation --> Class Summ`
+`Interface Operation --> Class Division`
+`Interface Operation --> Class Multiplication`
+`Interface Operation --> Class Subtraction`
+`Interface Operation --> Class Summ`
 
 2. Реализованы 4 основные арифметические действия
 3. Управление происходит через методы `UserController`
