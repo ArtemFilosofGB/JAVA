@@ -9,7 +9,12 @@ class Answer {
         }
         else {
             for (int i = 0; i < a.length; i++) {
-                c[i]= a[i]/b[i];
+                try{
+
+                    c[i]= a[i]/b[i];
+                }catch (ArithmeticException e){
+                    System.out.println("Деление на ноль невозможно");
+                }
             }
         }
 
