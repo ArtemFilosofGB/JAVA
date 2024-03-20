@@ -36,20 +36,22 @@ public class Parser {
     public void checkData() {
         //Проверка ФИО
         System.out.println("Проверка ФИО...");
-        if (!isAlpha(strings[0]))throw new RuntimeException("Фамилия: неверный ввод. Требуется буквенный формат");
-        if (!isAlpha(strings[1]))throw new RuntimeException("Имя: неверный ввод. Требуется буквенный формат");
-        if (!isAlpha(strings[2]))throw new RuntimeException("Отчество: неверный ввод. Требуется буквенный формат");
+        if (!isAlpha(strings[0])) throw new RuntimeException("Фамилия: неверный ввод. Требуется буквенный формат");
+        if (!isAlpha(strings[1])) throw new RuntimeException("Имя: неверный ввод. Требуется буквенный формат");
+        if (!isAlpha(strings[2])) throw new RuntimeException("Отчество: неверный ввод. Требуется буквенный формат");
 
-        if (strings[0].length() < 2 && isAlpha(strings[0])) throw new RuntimeException("Фамилия: неверный ввод. Должно быть не менее 2х символов");
+        if (strings[0].length() < 2 && isAlpha(strings[0]))
+            throw new RuntimeException("Фамилия: неверный ввод. Должно быть не менее 2х символов");
         if (strings[1].length() < 1) throw new RuntimeException("Имя: неверный ввод. Должно быть не менее 1х символов");
-        if (strings[2].length() < 1) throw new RuntimeException("Отчество: неверный ввод. Должно быть не менее 1х символов");
+        if (strings[2].length() < 1)
+            throw new RuntimeException("Отчество: неверный ввод. Должно быть не менее 1х символов");
 
         if (isNumeric(strings[0])) throw new RuntimeException("Фамилия: неверный ввод. Не может быть числом");
         if (isNumeric(strings[1])) throw new RuntimeException("Имя: неверный ввод. Не может быть числом");
         if (isNumeric(strings[2])) throw new RuntimeException("Отчество: неверный ввод. Не может быть числом");
 
         //Проверка даты
-        if (isDateValid(strings[3], "dd.MM.yyyy")) {
+        if (isDateValid(strings[3])) {
             System.out.println("Введенная строка " + strings[3] + "Дата: является допустимой датой в формате dd.mm.yyyy.");
         } else {
             throw new RuntimeException("Введенная строка " + strings[3] + " не является допустимой датой в формате dd.mm.yyyy.");
@@ -58,8 +60,9 @@ public class Parser {
         //Проверка телефона
         System.out.println("Проверка телефона...");
         if (!isNumeric(strings[4])) throw new RuntimeException("Телефон: поле не является числом");
-        else if (!(Long.parseLong(strings[4]) >0)) throw new RuntimeException("Телефон: должно быть положительны числом");
-        else  if(strings[4].length()<6) throw new RuntimeException("Телефон: должно быть более 6 цифр");
+        else if (!(Long.parseLong(strings[4]) > 0))
+            throw new RuntimeException("Телефон: должно быть положительны числом");
+        else if (strings[4].length() < 6) throw new RuntimeException("Телефон: должно быть более 6 цифр");
 
 
         //Проверка Пол
@@ -72,15 +75,17 @@ public class Parser {
         }
 
     }
+
     public boolean isAlpha(String name) {
         char[] chars = name.toCharArray();
         for (char c : chars) {
-            if(!Character.isLetter(c)) {
+            if (!Character.isLetter(c)) {
                 return false;
             }
         }
         return true;
     }
+
     public static boolean isNumeric(String str) {
         try {
             Long.parseLong(str);
@@ -89,15 +94,26 @@ public class Parser {
             return false;
         }
     }
-    public static boolean isDateValid(String date, String format) {
-        SimpleDateFormat sdf = new SimpleDateFormat(format);
-        sdf.setLenient(true); // Устанавливаем строгий режим проверки
 
-        try {
-            sdf.parse(date);
-            return true;
-        } catch (ParseException e) {
-            return false;
-        }
+    public static boolean isDateValid(String date) {
+        if (date.matches("\\d{2}.\\d{2}.\\d{4}")) {
+            System.out.println("date format ok");
+
+            String[] dateParsed = date.split(".");
+            System.out.println(dateParsed[0]);
+            try {
+                int day = Integer.parseInt(dateParsed[0]);
+                if (day < 0 && day > 31) return false;
+                int month = Integer.parseInt(dateParsed[1]);
+                if (month < 0 && day > 12) return false;
+                int year = Integer.parseInt(dateParsed[2]);
+                if (year < 1900 && day > 2025) return false;
+
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        } else return false;
+
     }
 }
