@@ -20,7 +20,7 @@ public class Task4 {
     static String[][] arr = new String[][]{
             {"1", "1.5", "1.5"},
             {"q", "1.5", "1"},
-            {"1", "q", "1.5"}
+            {"1", "1", "1.5"}
     };
 
 
