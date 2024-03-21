@@ -29,7 +29,7 @@
 
 ![Screen.png](Screen.png)
 
-Пример собственного исключения:
+**Пример собственного исключения:**
 ```
 MyRunTimeExeption.java 
 ```
@@ -57,7 +57,7 @@ public class Parser
 ```
 public class MyRunTimeExeption extends RuntimeException
 ```
-Реализованы проверки:
+**Реализованы проверки:**
 
 <Фамилия> - Буквенный ввод, не менее 2х символов
 
