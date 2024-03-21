@@ -30,12 +30,12 @@
 ![Screen.png](Screen.png)
 
 Пример собственного исключения:
-```java
+```
 MyRunTimeExeption.java 
 ```
 
 Структура хранения записи
-```java
+```
 User.java
 
     String surname;
@@ -48,13 +48,13 @@ User.java
 
 Проверка на ввод пустой строки и неверного формата ввода (6 строк данных разделённых пробелом) производится в классе Parser:
 
-```java
+```
 public class Parser 
 ```
 
 Собственный класс исключений продемонстрирован:
 
-```java
+```
 public class MyRunTimeExeption extends RuntimeException
 ```
 Реализованы проверки:
@@ -66,7 +66,7 @@ public class MyRunTimeExeption extends RuntimeException
 <пол> - m или f! (Не зависимо от регистра ввода, Допустимо M и F)
 
 *Программа отрабатывает без исключений:*
-```java
+```
 Пушкин Алескандр Сергеевич 06.06.1799 1234567890 M
 
 ```
