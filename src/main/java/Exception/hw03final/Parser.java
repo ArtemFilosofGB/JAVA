@@ -1,14 +1,14 @@
 package Exception.hw03final;
 
-import java.io.IOException;
-import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
+import java.util.Date;
 
 public class Parser {
     public String[] strings;
     String inputString;
     User user;
+    private static final String DATE_FORMAT = "dd.MM.yyyy";
 
     public Parser(String inputString) {
         this.inputString = inputString;
@@ -51,10 +51,10 @@ public class Parser {
         if (isNumeric(strings[2])) throw new RuntimeException("Отчество: неверный ввод. Не может быть числом");
 
         //Проверка даты
-        if (isDateValid(strings[3])) {
-            System.out.println("Введенная строка " + strings[3] + "Дата: является допустимой датой в формате dd.mm.yyyy.");
+        if (isValidDate(strings[3])) {
+            System.out.println("Дата: " + strings[3] + " является допустимой датой в формате dd.mm.yyyy.");
         } else {
-            throw new RuntimeException("Введенная строка " + strings[3] + " не является допустимой датой в формате dd.mm.yyyy.");
+            throw new RuntimeException("Дата: " + strings[3] + " не является допустимой датой в формате dd.mm.yyyy.");
         }
 
         //Проверка телефона
@@ -68,7 +68,7 @@ public class Parser {
         //Проверка Пол
 
         System.out.println("Проверка поля пол...");
-        if (strings[5].equals("f") || strings[5].equals("m")) {
+        if (strings[5].toLowerCase().equals("f") || strings[5].toLowerCase().equals("m")) {
             System.out.println("Вcе данные соответствуют формату");
         } else {
             throw new RuntimeException("Пол: значение не равно 'f' или 'm'");
@@ -95,25 +95,15 @@ public class Parser {
         }
     }
 
-    public static boolean isDateValid(String date) {
-        if (date.matches("\\d{2}.\\d{2}.\\d{4}")) {
-            System.out.println("date format ok");
-
-            String[] dateParsed = date.split(".");
-            System.out.println(dateParsed[0]);
-            try {
-                int day = Integer.parseInt(dateParsed[0]);
-                if (day < 0 && day > 31) return false;
-                int month = Integer.parseInt(dateParsed[1]);
-                if (month < 0 && day > 12) return false;
-                int year = Integer.parseInt(dateParsed[2]);
-                if (year < 1900 && day > 2025) return false;
-
-                return true;
-            } catch (NumberFormatException e) {
-                return false;
-            }
-        } else return false;
-
+    public static boolean isValidDate(String date) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+            sdf.setLenient(false);
+            Date parsedDate = sdf.parse(date);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
+
 }
