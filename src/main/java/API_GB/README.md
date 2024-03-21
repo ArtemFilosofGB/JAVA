@@ -85,7 +85,7 @@
 Установка:
 File -> Project Structure -> Librories ->"+" 
 ---
-```agsl
+```
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
